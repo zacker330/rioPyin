@@ -6,4 +6,4 @@
 .settings/
 *.springBeans
 *.iml
-idea/*
+.idea/*
