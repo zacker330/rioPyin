@@ -14,14 +14,6 @@ public interface PyinDataSource {
     String getPinyin(char hani);
 
 
-    /**
-     * 得到繁体字的简体版本
-     * @param tranditional 繁体字
-     * @return
-     */
-    String getSimplized(char tranditional);
-
-
 
 
 

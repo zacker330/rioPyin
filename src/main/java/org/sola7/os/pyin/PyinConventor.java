@@ -23,8 +23,24 @@ public class PyinConventor {
      */
     private boolean withToneMark = false;
 
+    public static PyinConventor create(PyinDataSource source) {
+        PyinConventor conventor = create();
+        conventor.source = source;
+        return conventor;
+    }
+
+
     public static PyinConventor create() {
         return new PyinConventor();
+    }
+
+    /**
+     * 转成拼音
+     *
+     * @return
+     */
+    public String generatePinyin() {
+        return "";
     }
 
     /**
@@ -48,12 +64,5 @@ public class PyinConventor {
         return this;
     }
 
-    /**
-     * 转成拼音
-     *
-     * @return
-     */
-    public String generatePinyin() {
-        return null;
-    }
+
 }
