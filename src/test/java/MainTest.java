@@ -1,8 +1,7 @@
 import org.junit.Test;
+import org.sola7.os.pyin.PyinConventor;
 import org.sola7.os.pyin.PyinDataSource;
-
-import javax.sql.DataSource;
-import java.util.Properties;
+import org.sola7.os.pyin.datasourcesImpl.PropertiesPyinDataSource;
 
 /**
  * Created with IntelliJ IDEA.
@@ -17,7 +16,7 @@ public class MainTest {
     public void test(){
 
         PyinDataSource source = new PropertiesPyinDataSource();
-        PyinBuilder.create().setSource(source).character("金石为开").withToneMark().generatePinyin();
+        PyinConventor.create().setSource(source).character("金石为开").withToneMark().generatePinyin();
     }
 
 }
