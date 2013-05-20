@@ -1,9 +1,9 @@
 -------------------------------------------------------------------------------
 Test set: MainTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.104 sec <<< FAILURE!
-test(MainTest)  Time elapsed: 0.045 sec  <<< FAILURE!
-org.junit.ComparisonFailure: expected:<[jīnshíwèikāi]> but was:<[]>
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.103 sec <<< FAILURE!
+test(MainTest)  Time elapsed: 0.046 sec  <<< FAILURE!
+org.junit.ComparisonFailure: expected:<jīnshí[wè]ikāi> but was:<jīnshí[,dànwèi,wé]ikāi>
 	at org.junit.Assert.assertEquals(Assert.java:115)
 	at org.junit.Assert.assertEquals(Assert.java:144)
 	at MainTest.test(MainTest.java:28)

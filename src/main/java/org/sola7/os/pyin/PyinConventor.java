@@ -40,7 +40,12 @@ public class PyinConventor {
      * @return
      */
     public String generatePinyin() {
-        return "";
+        StringBuilder stringBuilder = new StringBuilder();
+        for (char c : character.toCharArray()) {
+            stringBuilder.append(source.getPinyin(c));
+        }
+
+        return stringBuilder.toString();
     }
 
     /**

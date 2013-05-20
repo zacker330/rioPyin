@@ -10,7 +10,7 @@
     <property name="guice.disable.misplaced.annotation.check" value="true"/>
     <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
     <property name="file.encoding.pkg" value="sun.io"/>
-    <property name="idea.launcher.port" value="7536"/>
+    <property name="idea.launcher.port" value="7534"/>
     <property name="user.country" value="CN"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.os.patch.level" value="Service Pack 1"/>
@@ -61,8 +61,8 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase time="0.045" classname="MainTest" name="test">
-    <failure message="expected:&lt;[jīnshíwèikāi]&gt; but was:&lt;[]&gt;" type="org.junit.ComparisonFailure">org.junit.ComparisonFailure: expected:&lt;[jīnshíwèikāi]&gt; but was:&lt;[]&gt;
+  <testcase time="0.046" classname="MainTest" name="test">
+    <failure message="expected:&lt;jīnshí[wè]ikāi&gt; but was:&lt;jīnshí[,dànwèi,wé]ikāi&gt;" type="org.junit.ComparisonFailure">org.junit.ComparisonFailure: expected:&lt;jīnshí[wè]ikāi&gt; but was:&lt;jīnshí[,dànwèi,wé]ikāi&gt;
 	at org.junit.Assert.assertEquals(Assert.java:115)
 	at org.junit.Assert.assertEquals(Assert.java:144)
 	at MainTest.test(MainTest.java:28)
