@@ -24,17 +24,23 @@ public class PyinConventor {
     private boolean withToneMark = false;
 
 
-    //需要加入分词算法
+    /**
+     * 分词器
+     */
+    private Segmentationer segmentationer;
 
-    public static PyinConventor create(PyinDataSource source) {
-        PyinConventor conventor = create();
-        conventor.source = source;
-        return conventor;
-    }
-
-
-    public static PyinConventor create() {
-        return new PyinConventor();
+    /**
+     * @param dataSource     拼音源
+     * @param segmentationer 分词器
+     * @param strSource      待转换的字符串
+     * @return
+     */
+    public static PyinConventor create(PyinDataSource dataSource, Segmentationer segmentationer, String strSource) {
+        PyinConventor result = new PyinConventor();
+        result.source = dataSource;
+        result.segmentationer = segmentationer;
+        result.character = strSource;
+        return result;
     }
 
     /**
@@ -47,26 +53,23 @@ public class PyinConventor {
         return stringBuilder.toString();
     }
 
+
     /**
-     * 设置数据源
-     *
-     * @param source
+     * 带标点的拼音
      * @return
      */
-    public PyinConventor setSource(PyinDataSource source) {
-        this.source = source;
-        return this;
-    }
-
-    public PyinConventor character(String character) {
-        this.character = character;
-        return this;
-    }
-
     public PyinConventor withToneMark() {
         withToneMark = true;
         return this;
     }
 
+    /**
+     * 不带标点的拼音
+     * @return
+     */
+    public PyinConventor withNoneToneMark() {
+        withToneMark = false;
+        return this;
+    }
 
 }

@@ -6,4 +6,10 @@ package org.sola7.os.pyin;
  * Time: 下午2:22
  */
 public interface Segmentationer {
+    /**
+     * 进行分词
+     *
+     * @return
+     */
+    String[] segmentation();
 }
