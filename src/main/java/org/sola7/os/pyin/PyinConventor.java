@@ -23,6 +23,9 @@ public class PyinConventor {
      */
     private boolean withToneMark = false;
 
+
+    //需要加入分词算法
+
     public static PyinConventor create(PyinDataSource source) {
         PyinConventor conventor = create();
         conventor.source = source;
@@ -42,9 +45,8 @@ public class PyinConventor {
     public String generatePinyin() {
         StringBuilder stringBuilder = new StringBuilder();
         for (char c : character.toCharArray()) {
-            stringBuilder.append(source.getPinyin(c));
+            stringBuilder.append(source.getPinyin());
         }
-
         return stringBuilder.toString();
     }
 

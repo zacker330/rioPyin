@@ -23,8 +23,8 @@ public class PropertiesPyinDataSource implements PyinDataSource {
     }
 
     @Override
-    public String getPinyin(char hani) {
-        return properties.getProperty(hani + "");
+    public String getPinyin(String word) {
+        return properties.getProperty(word);
     }
 
 }

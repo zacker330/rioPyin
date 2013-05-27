@@ -7,14 +7,12 @@ public interface PyinDataSource {
 
 
     /**
-     * 得到简体字的拼音
-     * @param hani
+     * 得到某个词的拼音
+     *
+     * @param word
      * @return
      */
-    String getPinyin(char hani);
-
-
-
+    String getPinyin(String word);
 
 
 }

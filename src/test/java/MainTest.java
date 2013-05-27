@@ -21,7 +21,7 @@ public class MainTest {
 
         File root = new File(ClassLoader.getSystemResource("").getFile());
 
-       System.out.println(new File(ClassLoader.getSystemResource("").getFile(), "pinyin.properties").getAbsoluteFile());
+        System.out.println(new File(ClassLoader.getSystemResource("").getFile(), "pinyin.properties").getAbsoluteFile());
         InputStream in = new FileInputStream(new File(root, "pinyin.properties"));
         PyinDataSource source = new PropertiesPyinDataSource(in);
         String result = PyinConventor.create().setSource(source).character("金石为开").withToneMark().generatePinyin();
