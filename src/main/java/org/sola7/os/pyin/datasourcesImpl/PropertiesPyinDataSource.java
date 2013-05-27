@@ -24,7 +24,18 @@ public class PropertiesPyinDataSource implements PyinDataSource {
 
     @Override
     public String getPinyin(String word) {
-        return properties.getProperty(word);
+        String pinyin = properties.getProperty(word);
+        if (null != pinyin || "null".equals(pinyin)) {
+            return pinyin;
+        }
+        StringBuilder builder = new StringBuilder();
+        for (char ch : word.toCharArray()) {
+            String each = properties.getProperty(ch + "", ch + "");
+            builder.append(each);
+        }
+        return builder.toString();
+
+
     }
 
 }

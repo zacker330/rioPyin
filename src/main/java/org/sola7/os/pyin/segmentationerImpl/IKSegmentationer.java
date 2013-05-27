@@ -41,7 +41,7 @@ public class IKSegmentationer implements Segmentationer {
         Lexeme lexeme = null;
         try {
             while ((lexeme = ikSegmentation.next()) != null) {
-                String each =lexeme.getLexemeText();
+                String each = lexeme.getLexemeText();
                 result.add(each);
             }
         } catch (IOException e) {
@@ -50,5 +50,11 @@ public class IKSegmentationer implements Segmentationer {
         }
 
         return result.toArray(new String[result.size()]);
+    }
+
+    @Override
+    public String[] segmentation(String source) {
+        sourceStr = source;
+        return this.segmentation();
     }
 }

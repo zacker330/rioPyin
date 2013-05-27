@@ -66,7 +66,7 @@ public class MainTest {
 
         String result = PyinConventor.create(source, segmentationer, "金石为开").withToneMark().generatePinyin();
 
-        assertEquals("jīnshíwèikāi", result);
+        assertEquals("jīn,shí,wéi,kāi", result);
     }
 
 }

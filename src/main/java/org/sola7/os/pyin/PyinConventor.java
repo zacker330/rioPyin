@@ -10,7 +10,7 @@ public class PyinConventor {
     /**
      * 拼音与汉字的库
      */
-    private PyinDataSource source;
+    private PyinDataSource dataSource;
 
     /**
      * 汉字
@@ -37,7 +37,7 @@ public class PyinConventor {
      */
     public static PyinConventor create(PyinDataSource dataSource, Segmentationer segmentationer, String strSource) {
         PyinConventor result = new PyinConventor();
-        result.source = dataSource;
+        result.dataSource = dataSource;
         result.segmentationer = segmentationer;
         result.character = strSource;
         return result;
@@ -50,15 +50,16 @@ public class PyinConventor {
      */
     public String generatePinyin() {
         StringBuilder stringBuilder = new StringBuilder();
-
-
-
+        for (String word : segmentationer.segmentation(character)) {
+            stringBuilder.append(dataSource.getPinyin(word));
+        }
         return stringBuilder.toString();
     }
 
 
     /**
      * 带标点的拼音
+     *
      * @return
      */
     public PyinConventor withToneMark() {
@@ -68,6 +69,7 @@ public class PyinConventor {
 
     /**
      * 不带标点的拼音
+     *
      * @return
      */
     public PyinConventor withNoneToneMark() {
