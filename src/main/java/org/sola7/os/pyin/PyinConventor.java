@@ -50,6 +50,9 @@ public class PyinConventor {
      */
     public String generatePinyin() {
         StringBuilder stringBuilder = new StringBuilder();
+
+
+
         return stringBuilder.toString();
     }
 

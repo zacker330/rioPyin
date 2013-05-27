@@ -55,19 +55,17 @@ public class MainTest {
 
     @Test
     public void test() throws IOException {
-        File root = new File(ClassLoader.getSystemResource("").getFile());
-        System.out.println(new File(ClassLoader.getSystemResource("").getFile(), "pinyin.properties").getAbsoluteFile());
-
-        InputStream in = new FileInputStream(new File(root, "pinyin.properties"));
-
 
         //拼音数据源
+        File root = new File(ClassLoader.getSystemResource("").getFile());
+        InputStream in = new FileInputStream(new File(root, "pinyin.properties"));
         PyinDataSource source = new PropertiesPyinDataSource(in);
 
         //分词器
         Segmentationer segmentationer = new IKSegmentationer();
 
-        String result = PyinConventor.create(source, segmentationer, "金石为开").withNoneToneMark().generatePinyin();
+        String result = PyinConventor.create(source, segmentationer, "金石为开").withToneMark().generatePinyin();
+
         assertEquals("jīnshíwèikāi", result);
     }
 
