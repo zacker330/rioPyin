@@ -44,9 +44,6 @@ public class PyinConventor {
      */
     public String generatePinyin() {
         StringBuilder stringBuilder = new StringBuilder();
-        for (char c : character.toCharArray()) {
-            stringBuilder.append(source.getPinyin());
-        }
         return stringBuilder.toString();
     }
 
