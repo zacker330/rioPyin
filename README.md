@@ -23,7 +23,10 @@
 这里要说明一下：
 * 拼音数据源：目前负责将传入的汉字转成拼音，而源可以有很多种：从数据库里读，从properties里读，你可以根据自己的需要进行实现。
 * 分词器：汉字有很多多音字，在不同的词里，会有不同的音，所以需要分词后，再查那个汉字的拼音。 `Segmentationer`也是一个接口而已。本库中默认使用IKAnalyzer分词系统。
+由于IKAnalyzer没有放在maven中央仓储，所以需要加到本地中：
 
+`mvn install:install-file -Dfile=ikanalyzer jar包路径 -DgroupId=org.wltea.ik-analyzer -DartifactId=ik-analyzer -Dversion=3.2.8 -Dpackaging=jar
+`
 
 
 
